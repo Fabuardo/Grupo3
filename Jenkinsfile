@@ -20,8 +20,9 @@ pipeline {
             }
          }*/
         stage('SonarQube analysis') {
-             environment {
-                SCANNER_HOME = tool 'SonarScanner 4.0';
+             steps {
+                 withSonarQubeEnv('SonarQube'){
+                //SCANNER_HOME = tool 'SonarScanner 4.0';
                 }
             steps {
               withSonarQubeEnv(credentialsId: 'sqp_02b7d5fc6b37dceb7a1475b3241fef9fa793e2c8', installationName: 'SonarQube') {
