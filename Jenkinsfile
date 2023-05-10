@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Configurar el entorno de SonarQube
-                    def scannerHome = tool 'SonarScanner 4.0'
+                    // def scannerHome = tool 'SonarScanner 4.0'
                     withSonarQubeEnv('SonarQube') {
                         sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=Modulo3 \
